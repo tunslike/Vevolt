@@ -1,0 +1,278 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    font-family: 'Oxygen', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100%;
+  
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
+  }
+  .footer,
+  .push { 
+    height: 50px;
+  }
+
+  .container {
+      max-width: 1300px;
+      margin: auto;
+  }
+
+  .logoarea{
+      background-color: #404257;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 20px 10%;
+      color: #fff;
+      cursor: pointer;
+  }
+
+  nav {
+      flex: 1;
+      text-align: right;
+      font-weight: 500;
+      font-size: 13px;
+      font-family: 'Rubik', sans-serif;
+      margin-right: 20px;
+  }
+  
+  nav ul {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  .signin{
+      background-color: #e23c3c;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 13px;
+      font-family: 'Rubik', sans-serif;
+      transition:all .5s;
+      text-decoration: none;
+      font-weight: 500;
+  }
+
+  .display{
+      background-image: url('../images/display4.jpg');
+      height: 400px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-y: 10%;
+  }
+
+  .registervendor{
+    background-color: #f0f0f0;
+    height: 150px;
+  }
+
+  .displayContents{
+    padding-top: 4%;
+      margin: 0px auto;
+      width: 40%;
+      text-align: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 30px;
+  }
+
+  .signup{
+    background-color: #9a9ba1;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    transition:all .5s;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+  .signin a{
+    text-decoration: none;
+    color: #fff;
+    transition:all .5s;
+  }
+
+  .signin a:hover{
+    text-decoration: none;
+    color: #404257;
+  }
+
+  .signin:hover{
+    background: #ffe400;
+    color: #404257;
+  }
+
+  .mainsearch{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: relative;
+    background-color: #fff;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .createStorebtn{
+    position: absolute;
+    right:0;
+    background-color: #28384f;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 20px 35px;
+    margin-top: 13px;
+    margin-right: 10%;
+    transition:all .5s
+  }
+
+  .createStorebtn:hover{
+    background-color:#e23c3c;
+  }
+
+  .createStoretxt{
+    padding-top: 10px;
+    line-height: 33px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    width: 55%;
+    color:#3b4c66;
+  }
+
+  .regcontainer{
+    position: relative;
+    margin: 0px auto;
+    width: 70%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+  }
+
+  .mainsearch input {
+    background-color: #fff;
+    font-size: 17px;
+    color: #303030;
+    font-weight: 500;
+    padding: 20px;
+    width: 450px;
+    border:none;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 60px;
+  }
+
+  .iconsearch{
+    font-size: 35px;
+    color: #d1d1d1;
+    position: absolute;
+    margin-top: 7px;
+    left: 0;
+    padding-left: 20px;
+  }
+
+  .mainsearch select {
+      border: none;  
+      font-family: 'Rubik', sans-serif;
+      font-size: 17px;
+    font-weight: 500;
+    width: 150px;
+    columns: #6b6b6b;
+  }
+
+  .mainsearch button {
+    cursor: pointer;
+    background-color:#e23c3c;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 17px 25px;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+
+  nav li a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    margin-top: 5px;
+    background: #ffe400;
+    transition:all .5s
+   }
+   
+   nav li a:hover::after {
+    width: 100%;
+    color: #fff;
+   }
+
+  nav ul a {
+      color: #e6e6e6;
+      text-decoration: none;
+      display: inline-block;
+  }
+
+  nav ul li {
+      display: inline-block;
+      margin-right: 30px;
+  }
+
+  .topnav {
+      background-color: #e23c3c;
+      width: 100%;
+      color: #fff;
+      display:flex;
+      align-items: center;
+      padding: 12px 10%;
+      font-size: 14px;
+  }
+
+  .helpText{
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;  
+  }
+
+  .vendorLogin a{
+      text-decoration: none;
+      color: #fff;
+  }
+
+  .vendorLogin{
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+  }
+
+  .topnavcontainer{
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .topnavright{
+      flex: 1;
+      text-align: right;
+  }
