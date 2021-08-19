@@ -14,4 +14,30 @@
 </head>
 <body>
 <div class="wrapper">    
+<header>
+    <div class="topnav">
+        <div class="helpText">
+        <i style="margin-right:5px;" class="fas fa-question-circle"></i> Need help? contact <span style="color:#ffe400; margin-left:10px;"><i class="fas fa-envelope" style="margin-right:5px;"></i> help@vevolt.ng  <span style="margin-left: 15px;"><i class="fas fa-phone-alt" style="margin-right:5px;"></i> 0709 9839 890</span><span style="color:#fff;"> (HOTLINE)</span></span>
+        </div>
+        <div class="topnavright">
+            <div class="vendorLogin"><a href="#"><i style="margin-right:5px;" class="fas fa-users"></i> Vendor Login</a></div>
+        </div>
+    </div>
+    <div class="logoarea">
+        <img src="<?php echo URLROOT; ?>/public/images/logo.jpg?v=<?php echo rand(10000000000,99999999999); ?>" alt="Logo" width="150px" />
+        <nav>
+            <ul>
+                <li><a href="<?php echo URLROOT; ?>/index">HOME</a></li>
+                <li><a href="<?php echo URLROOT; ?>/aboutus">ABOUT US</a></li>
+                <li><a href="<?php echo URLROOT; ?>/store">STORE</a></li>
+                <li><a href="<?php echo URLROOT; ?>/vendor">VENDOR</a></li>
+                <li><a href="<?php echo URLROOT; ?>/requests">REQUESTS</a></li>
+            </ul>
+        </nav>
+        <div style="padding-bottom:10px; display:flex;">
+        <a class="signin" href="<?php echo URLROOT; ?>/account/login"><i style="margin-right:5px;" class="fa fa-user"></i> Sign In</a>
+        <a class="signup" href="<?php echo URLROOT; ?>/account/register">Register here</a>
+        </div>
+    </div>
+</header>
 

@@ -1,3 +1,12 @@
+:root {
+  --titleColor: #222d3d;
+  --segmentBackground: #fcfcfc;
+  --primaryRed: #e23c3c;
+  --primaryYellow: #ffe400;
+  --borderColor: #f0f0f0;
+  --inputBorder: #e0e0e0;
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -25,8 +34,227 @@ html, body {
   }
 
   .container {
-      max-width: 1300px;
+      max-width: 1500px;
       margin: auto;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 5%;
+      padding-bottom: 5%;
+  }
+  
+  .topleadheader{
+    font-family: 'Rubik', sans-serif;
+    font-size: 17px;
+    padding: 5px;
+    padding-left: 15px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fff;
+    color: var(--titleColor);
+    border-bottom-color: var(--primaryRed);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+
+  .col-lead{
+    flex-basis: 31%;
+    min-width: 400px;
+    margin-bottom: 20px;
+    background-color: var(--segmentBackground);
+    border-radius: 7px;
+    height: 155px;
+    transition:all .5s;
+    position: relative;
+    border-color: #ebebeb;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .col-lead img {
+    position: absolute;
+    left: 0;
+    width: 200px;
+  }
+
+  .serviceImg1 {
+    position: absolute;
+    right: 0;
+    margin-right: 60px;
+    margin-top: 45px;
+    font-weight: 600;
+    font-size: 19px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--primaryRed);
+    width: 100px;
+
+  }
+
+  .serviceImg2 {
+    position: absolute;
+    right: 0;
+    margin-right: -20px;
+    margin-top: 45px;
+    font-weight: 600;
+    font-size: 19px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--primaryRed);
+    width: 180px;
+  }
+
+  .innerheader{
+    background-color: var(--segmentBackground);
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+
+  .logintitle {
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    color: var(--primaryRed);
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--segmentBackground);
+    padding: 20px;
+  }
+
+  *:focus {
+    outline: none;
+}
+
+
+  .loginform {
+    border-color: var(--inputBorder);
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  .loginform input {
+    border: none;
+    width: 100%;
+    padding: 9px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--titleColor);
+  }
+
+  .loginicon {
+      color: var(--inputBorder);
+      font-size: 20px;
+      margin-left: 10px;
+      margin-top: 5px;
+      margin-right: 10px;
+  }
+
+  .remboxme{
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--titleColor);
+    font-weight: 500;
+    margin-top: 30px;
+  }
+
+  .loginBtn{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .loginbutton{
+    background-color: var(--primaryRed);
+    border-radius: 5px;
+    padding: 15px 50px;
+    color: #fff;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    transition:all .5s;    
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+
+.regbutton{
+  background-color: var(--titleColor);
+  border-radius: 5px;
+  padding: 15px 50px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Rubik', sans-serif;
+  transition:all .5s;    
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+  .forgotpwd{
+    margin-top: 70px;
+  }
+
+  .forgotpwd a {
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    color: var(--titleColor);
+    font-weight: 500;
+  }
+
+  .loginbox{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .loginTitle{
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    font-size: 28px;
+    color: var(--titleColor);
+  }
+
+  .serviceImg3 {
+    position: absolute;
+    right: 0;
+    margin-right: -30px;
+    margin-top: 45px;
+    font-weight: 600;
+    font-size: 19px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--primaryRed);
+    width: 200px;
+  }
+
+  .col-lead:hover {
+    -moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+  }
+  
+  .topleaderbody{
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 15px;
   }
 
   .logoarea{
@@ -76,6 +304,14 @@ html, body {
   .registervendor{
     background-color: #f0f0f0;
     height: 150px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
   }
 
   .displayContents{
@@ -142,7 +378,7 @@ html, body {
     border-radius: 8px;
     padding: 20px 35px;
     margin-top: 13px;
-    margin-right: 10%;
+    margin-right: 5%;
     transition:all .5s
   }
 
@@ -154,10 +390,16 @@ html, body {
     padding-top: 10px;
     line-height: 33px;
     font-family: 'Rubik', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
     width: 55%;
-    color:#3b4c66;
+    color:#222d3d;
+  }
+  
+  
+
+  .topleads{ 
+    background-color: #fcfcfc;
   }
 
   .regcontainer{

@@ -6,7 +6,19 @@ class Account extends Controller {
         $this->userModel = $this->model('Customer');
     }
 
-    public function login() {
+   public function login() {
+        $data = [
+            'title' => 'Login page',
+            'username' => '',
+            'password' => '',
+            'usernameError' => '',
+            'passwordError' => ''
+        ];
+
+        $this->view('account/login', $data);
+   }
+    
+    public function loginRef() {
 
         $data = [
             'firstname' => 'Babatunde',
