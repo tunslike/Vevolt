@@ -10,11 +10,13 @@
         <form action="/action_page.php" method="get" id="form1">
             <div class="iconsearch"><i class="fas fa-search"></i></div>
             <input type="text" placeholder="Search here: Ex. Generator parts, service, drum oil" id="lname" name="lname" />
+            <!--
             <select name="category" id="">
                 <option selected="selected" value="0">Category</option>
                 <option value="0">Option 1</option>
                 <option value="0">Option 2</option>
             </select>
+            -->
             <button type="submit" form="form1" value="Submit">Search</button>
         </form>
         </div>

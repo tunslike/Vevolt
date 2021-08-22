@@ -9,15 +9,20 @@
 
 <div class="loginbox">
     <h5 class="logintitle"><i style="margin-right:5px;" class="fas fa-user"></i> Provide your login details to access your account</h5>
-
-    <form action="<?php echo URLROOT; ?>/account/login" method ="POST">
+    <div class="errorMsgBox">
+    <i class="fas fa-times" style="margin-right:5px; font-size:16px;"></i> Error: <span id="ermsg"></span>
+    </div>
+    <div class="successMsgBox">
+    <i class="fas fa-check" style="margin-right:5px; font-size:16px;"></i> This is success
+    </div>
+    <form action="<?php echo URLROOT; ?>/account/login" onsubmit="return validateLoginForm();" method ="POST">
     <div class="loginform">
     <i class="far fa-envelope loginicon"></i>
-    <input type="text" name="" placeholder="Email Address">
+    <input type="text" name="usern" id="usern" placeholder="Email Address">
     </div>
     <div class="loginform">
     <i class="fas fa-lock loginicon"></i>
-    <input type="password" name="" placeholder="Password">
+    <input type="password" name="entry" id="entry" placeholder="Password">
     </div>
     <div class="loginBtn">
         <div class="remboxme">
