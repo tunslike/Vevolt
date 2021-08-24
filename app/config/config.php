@@ -13,3 +13,8 @@
 
     //Sitename
     define('SITENAME', 'Vevolt.ng | No 1. Online Parts Hub');
+
+    //Email Configuration
+    define('EMAIL_USERNAME', 'tunslike@gmail.com');
+    define('EMAIL_API_KEY', '3dc0b88c-71e0-451c-8f7b-884e32d411e2');
+

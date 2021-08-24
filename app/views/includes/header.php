@@ -13,7 +13,37 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/appStyle.css?v=<?php echo rand(10000000000,99999999999); ?>">
 </head>
 <body>
-<div class="wrapper">    
+<div class="wrapper">
+
+<div class="menuAreaFixed">
+    <div class="logoareatop">
+    <a href="<?php echo URLROOT; ?>/index" title="Back to Home"><img src="<?php echo URLROOT; ?>/public/images/logo.jpg?v=<?php echo rand(10000000000,99999999999); ?>" alt="Logo" width="100px" /></a>
+    <div class="mainsearchtop">
+        <form action="/action_page.php" method="get" id="form1">
+            <div class="iconsearchtop"><i class="fas fa-search"></i></div>
+            <input type="text" placeholder="Search here: Ex. Generator parts, service, drum oil" id="lname" name="lname" />
+            <!--
+            <select name="category" id="">
+                <option selected="selected" value="0">Category</option>
+                <option value="0">Option 1</option>
+                <option value="0">Option 2</option>
+            </select>
+            -->
+            <button type="submit" form="form1" value="Submit">Search</button>
+        </form>
+        </div>
+    <div style="display:flex; align-items:center;">
+
+<?php if(isset($_SESSION['user_id'])) : ?>
+    <a class="dashboard" href="<?php echo URLROOT; ?>/account/dashboard"><i style="margin-right:5px;" class="fa fa-user"></i> Hi, <?php echo $_SESSION['firstname']; ?> ...</a>
+    <a class="signup" href="<?php echo URLROOT; ?>/account/logout">Log out <i style="margin-left:5px;" class="fas fa-sign-out-alt"></i></a>
+<?php else : ?>
+    <a class="signup" href="<?php echo URLROOT; ?>/account/login"><i style="margin-right:5px;" class="fa fa-user"></i> Sign In</a>
+<?php endif; ?>
+</div>
+    </div>
+</div>
+
 <header>
     <div class="topnav">
         <div class="helpText">
@@ -24,7 +54,7 @@
         </div>
     </div>
     <div class="logoarea">
-        <img src="<?php echo URLROOT; ?>/public/images/logo.jpg?v=<?php echo rand(10000000000,99999999999); ?>" alt="Logo" width="150px" />
+        <a href="<?php echo URLROOT; ?>/index" title="Back to Home"><img src="<?php echo URLROOT; ?>/public/images/logo.jpg?v=<?php echo rand(10000000000,99999999999); ?>" alt="Logo" width="150px" /></a>
         <nav>
             <ul>
                 <li><a href="<?php echo URLROOT; ?>/index">HOME</a></li>
@@ -35,8 +65,14 @@
             </ul>
         </nav>
         <div style="padding-bottom:10px; display:flex;">
-        <a class="signin" href="<?php echo URLROOT; ?>/account/login"><i style="margin-right:5px;" class="fa fa-user"></i> Sign In</a>
-        <a class="signup" href="<?php echo URLROOT; ?>/account/register">Register here</a>
+
+        <?php if(isset($_SESSION['user_id'])) : ?>
+            <a class="dashboard" href="<?php echo URLROOT; ?>/account/dashboard"><i style="margin-right:5px;" class="fa fa-user"></i> Hi, <?php echo $_SESSION['firstname']; ?> ...</a>
+            <a class="signup" href="<?php echo URLROOT; ?>/account/logout">Log out <i style="margin-left:5px;" class="fas fa-sign-out-alt"></i></a>
+        <?php else : ?>
+            <a class="signin" href="<?php echo URLROOT; ?>/account/login"><i style="margin-right:5px;" class="fa fa-user"></i> Sign In</a>
+            <a class="signup" href="<?php echo URLROOT; ?>/account/register">Register here</a>
+        <?php endif; ?>
         </div>
     </div>
 </header>

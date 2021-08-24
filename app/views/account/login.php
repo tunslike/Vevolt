@@ -12,9 +12,18 @@
     <div class="errorMsgBox">
     <i class="fas fa-times" style="margin-right:5px; font-size:16px;"></i> Error: <span id="ermsg"></span>
     </div>
-    <div class="successMsgBox">
-    <i class="fas fa-check" style="margin-right:5px; font-size:16px;"></i> This is success
+    <?php if(isset($_GET['r'])) : ?>
+        <div class="successMsgBox">
+        <i class="fas fa-check" style="margin-right:5px; font-size:16px;"></i> You have been successfully logged out!
+        </div>
+    <?php endif; ?>
+
+    <?php if(!empty($data['errorMessage']) && $data['errorMessage'] != '') : ?>
+        <div class="errorMsgBox" style="display:block">
+        <i class="fas fa-times" style="margin-right:5px; font-size:16px;"></i> <?php echo $data['errorMessage']; ?>
     </div>
+    <?php endif; ?>
+    
     <form action="<?php echo URLROOT; ?>/account/login" onsubmit="return validateLoginForm();" method ="POST">
     <div class="loginform">
     <i class="far fa-envelope loginicon"></i>

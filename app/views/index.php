@@ -2,6 +2,7 @@
    require APPROOT . '/views/includes/header.php';
 ?>
 <main>
+
     <div class="display">
         <div class="displayContents animate__bounceIn animate__infinite	infinite">
         Buying <span style="color:#ffe400;">realiable parts</span> at our store will ensure a <span style="color:#ffe400;">smooth operation</span> of your equipment
