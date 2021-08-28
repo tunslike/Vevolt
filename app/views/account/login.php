@@ -2,13 +2,13 @@
    require APPROOT . '/views/includes/header.php';
 ?>
 <div class="innerheader">
-<div class="loginTitle">
+<div class="innerHeaderTitle">
     Login into your account
 </div>
 </div>
 
 <div class="loginbox">
-    <h5 class="logintitle"><i style="margin-right:5px;" class="fas fa-user"></i> Provide your login details to access your account</h5>
+    <h5 class="logintitleheader"><i style="margin-right:5px;" class="fas fa-user"></i> Provide your login details to access your account</h5>
     <div class="errorMsgBox">
     <i class="fas fa-times" style="margin-right:5px; font-size:16px;"></i> Error: <span id="ermsg"></span>
     </div>

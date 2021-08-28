@@ -149,7 +149,7 @@ class Customer {
 
         //Prepared statement
         $this->db->query('SELECT * FROM esb_customers WHERE EMAIL = :email');
-
+ 
         //Email param will be binded with the email variable
         $this->db->bind(':email', $email);
 

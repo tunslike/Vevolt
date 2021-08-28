@@ -1,5 +1,5 @@
 <?php
-class Vendor {
+class Store {
 
     private $db;
 
@@ -7,26 +7,23 @@ class Vendor {
         $this->db = new Database;
     }
 
-    public function createNewStore($data) {
+    public function AddProduct($data) {
 
         try{
 
-            $this->db->query("INSERT INTO esb_store (STORE_ID, ACCESS_ID, NAME, ADDRESS, STATE, MOBILE, EMAIL, CATEGORY, DATE_CREATED) 
-            VALUES(:storeid, :accessid, :name, :address, :state, :mobile, :email, :category, :dateCreated) ");
+            $this->db->query("INSERT INTO esb_products (PRODUCT_ID, STORE_ID, NAME, AMOUNT, IMAGE, DATE_CREATED) 
+            VALUES(:productid, :storeid, :name, :amount, :image, :dateCreated) ");
 
             $date =  date('Y-m-d H:i:s');
-            $storeid = getUniqueUserID();
+            $productid = getUniqueUserID();
 
             //Bind values
-            $this->db->bind(':accessid', $data['accessid']);
             $this->db->bind(':name', $data['name']);
-            $this->db->bind(':address', $data['address']);
-            $this->db->bind(':mobile', $data['mobile']);
-            $this->db->bind(':email', $data['email']);
-            $this->db->bind(':state', $data['state']);
-            $this->db->bind(':category', $data['category']);
+            $this->db->bind(':amount', $data['amount']);
+            $this->db->bind(':image', convertImageToBlob($data['image']));
             $this->db->bind(':dateCreated', $date);
-            $this->db->bind(':storeid', $storeid);
+            $this->db->bind(':productid', $productid);
+            $this->db->bind(':storeid', $data['storeid']);
 
             //Execute function
             if ($this->db->execute()) {
@@ -39,7 +36,21 @@ class Vendor {
             echo 'ERROR!';
             print_r( $e );
         }
+    }
 
+    //Find user by email. Email is passed in by the Controller.
+    public function loadAllProducts() {
+
+        //Prepared statement
+        $this->db->query('SELECT * FROM esb_products WHERE STATUS = 0 AND QUANTITY > 0');
+ 
+        $row = $this->db->single();
+
+        var_dump($row);
+
+        exit();
+
+        return $row;
     }
 
 

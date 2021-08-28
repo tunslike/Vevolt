@@ -12,7 +12,46 @@ function validateLoginForm(){
     }
 }
 
-function validationRegistrationForm(){
+function validateCreateStrore() {
+
+    var sname = $('#sname').val() 
+    var saddr = $('#saddr').val()
+    var cat = $('#cat').val()
+    var mobile = $('#mobile').val()
+    var state = $('#state').val()
+
+    if(sname.trim() == '' || saddr.trim() == '' || cat.trim() == '' || mobile.trim() == '' || state.trim() == ''){
+        $('#ermsg').html('All fields are complusory!')
+        $('.errorMsgBox').show()
+        return false;
+    }
+}
+
+function showCatHint(id) {
+
+    $('#hintInfo').hide()
+
+    switch (id) {
+        case '1':
+            $('#infomsg').html('This indicates that you are specialized in the sales of all Master Spare Parts');
+            $('#hintInfo').show()
+            break;
+        case '2':
+            $('#infomsg').html('This indicates that you are specialized in the sales of Generator Parts/Sets');
+            $('#hintInfo').show()
+            break;
+        case '3':
+            $('#infomsg').html('This indicates that you are specialized in the sales of Engine Oil/Service Kit');
+            $('#hintInfo').show()
+            break;
+        case '4':
+            $('#infomsg').html('This indicates that you are specialized in the sales of General Service Parts');
+            $('#hintInfo').show()
+            break;
+    }
+}
+
+function validationRegistrationForm() {
 
     var lname = $('#lname').val() 
     var fname = $('#fname').val()

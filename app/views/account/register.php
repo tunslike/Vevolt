@@ -2,7 +2,7 @@
    require APPROOT . '/views/includes/header.php';
 ?>
 <div class="innerheader">
-<div class="loginTitle">
+<div class="innerHeaderTitle">
     Register a new account
 </div>
 </div>

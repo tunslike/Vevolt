@@ -1,11 +1,13 @@
 :root {
   --titleColor: #222d3d;
-  --segmentBackground: #fcfcfc;
+  --segmentBackground: #f5f5f5;
   --primaryRed: #e23c3c;
   --primaryYellow: #ffe400;
   --borderColor: #f0f0f0;
   --inputBorder: #e0e0e0;
   --headerBackground: #404257;
+  --uniqueBlue: rgb(51, 151, 209);
+  --greyTtext: #b5b5b5;
 }
 
 html, body {
@@ -39,8 +41,8 @@ html, body {
       margin: auto;
       padding-left: 100px;
       padding-right: 100px;
-      padding-top: 5%;
-      padding-bottom: 5%;
+      padding-top: 3%;
+      padding-bottom: 3%;
   }
   
   .topleadheader{
@@ -49,13 +51,64 @@ html, body {
     padding: 5px;
     padding-left: 15px;
     font-weight: 600;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #fff;
     color: var(--titleColor);
-    border-bottom-color: var(--primaryRed);
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
+  }
+
+  .productheader{
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #fff;
+    font-weight: 600;
+    align-items: center;
+  }
+
+  .productFindheader a {
+    text-decoration: none;
+    color:#fff;
+  }
+
+  .productFindheader{
+    flex: 1;
+    text-align: right;
+    background-color: var(--primaryRed);
+    color: #fff;
+    width: 150px;
+    font-size: 14px;
+    padding: 5px;
+    padding-right: 15px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-weight: 500;
+  }
+
+
+  .productheadertitle{
+    flex: 4;
+    font-size: 17px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: var(--titleColor);
+  }
+
+
+  .storeformrow{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+  }
+
+  .storeformcolumn > * {
+    flex: 1 1 100px;
+    padding: 10px;
+    width: 311px;
   }
 
   .col-lead{
@@ -110,7 +163,7 @@ html, body {
   }
 
 
-  .logintitle {
+  .logintitleheader {
     font-family: 'Rubik', sans-serif;
     font-size: 14px;
     color: var(--primaryRed);
@@ -118,7 +171,10 @@ html, body {
     text-decoration: none;
     background-color: var(--segmentBackground);
     padding: 20px;
+    border-radius: 5px;
   }
+
+ 
 
   *:focus {
     outline: none;
@@ -135,6 +191,23 @@ html, body {
     border-radius: 5px;
     margin-bottom: 15px;
   }
+
+   .formcolumn{
+    flex-basis: 31%;
+    flex: 1;
+   }
+
+  .loginform label {
+    padding-left: 10px;
+    margin-top: 8px;
+    width: 180px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: var(--titleColor);
+    text-align: left;
+    font-size: 13px;
+  }
+
   .loginform input {
     border: none;
     width: 100%;
@@ -234,12 +307,41 @@ html, body {
     text-align: center;
   }
 
-  .loginTitle{
+  .innerBodyContainer{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .formrow{
+      display: flex;
+      flex-wrap: wrap;    
+  }
+
+  .formrow > div {
+    flex: 50%; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .innerHeaderTitle{
     text-align: center;
     font-weight: 500;
     font-family: 'Rubik', sans-serif;
     font-size: 28px;
     color: var(--titleColor);
+  }
+
+  .innerHeaderTitle:after { 
+    content:"";
+    display:block;
+    width: 4em;
+    max-width:70%;
+    border-bottom: 7px solid var(--primaryRed);
+    margin: 18px auto 0;
   }
 
   .serviceImg3 {
@@ -276,6 +378,15 @@ transform: scale(1.1);
       padding: 20px 10%;
       color: #fff;
       cursor: pointer;
+  }
+
+  .storeowner{
+    padding: 15px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: var(--uniqueBlue);
+    font-weight: 500;
   }
 
   .logoareatop{
@@ -322,6 +433,193 @@ transform: scale(1.1);
       background-repeat: no-repeat;
       background-size: cover;
       background-position-y: 10%;
+  }
+
+  .productWindow{
+    background-color: var(--segmentBackground);
+    padding: 3.5% 0px;
+  }
+
+  .productrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 40px;
+    column-gap: 20px;
+  }
+
+  .productcolumn:hover {
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.13);
+-moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.13);
+box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.13);
+transform:translate(0px,-4px);
+  }
+
+  .productcolumn {
+    flex-basis: 23%;
+    min-width: 180px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition:all .5s
+  }
+
+  .productcolumn img {
+    width: 95%;
+    margin: 5px;
+  }
+
+  .productDetails {
+    margin-top: 10px;
+    border-top-color: var(--segmentBackground);
+    border-top-width: 2px;
+    border-top-style: solid;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .prodprice{
+    flex: 2;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    color: var(--primaryRed);
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .prodCount {
+    flex: 1;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--greyTtext);
+    font-size: 13px;
+    text-align: right;
+  }
+
+  .productname {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: var(--titleColor);
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .productcontainer {
+    display: flex;
+    margin: 0px auto;
+    width: 80%;
+  }
+
+  .productrightbox{
+    margin-top: 10px;
+    flex-basis: 79%;
+    margin-left: 45px;
+  } 
+
+  .leftsiderhdr{
+    padding: 15px;
+    border-bottom-color: var(--borderColor);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    color: var(--primaryRed);
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 15px;
+  }
+
+  .categoryList ul {
+    margin-left: -20px;
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 35px;
+    font-family: 'Rubik', sans-serif;
+  }
+
+  .categoryList a{
+    text-decoration: none;
+    color: var(--headerBackground);
+  }
+
+  .categoryList .fas {
+    color: #e23c3c;
+  }
+
+  .middlesiderhdr{
+    margin-top: 50px;
+    padding: 15px;
+    border-top-color: var(--borderColor);
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-bottom-color: var(--borderColor);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    color: var(--titleColor);
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 15px;
+  }
+
+  .reqcontent{
+    display: flex;
+  }
+
+  .reqTime {
+    margin-top: 5px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    text-align: right;
+    color: var(--greyTtext);
+    font-size: 12px;
+    background-color: var(--borderColor);
+    padding: 5px;
+  }
+
+  .requestTab{
+    
+    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--segmentBackground);
+    font-family: 'Rubik', sans-serif;
+    padding: 10px;
+    font-weight: 500;
+    font-weight: 14px;
+    margin-bottom: 5px;
+  }
+
+  .allRequest{
+    text-decoration: none;
+    color: #e23c3c;
+    padding: 15px;
+    padding-top: 30px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .reqtabmsg {
+    flex: 8;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--headerBackground);
+  }
+
+  .reqtabtime {
+    flex: 1;
+    color: #404257;
+  }
+
+  .productleftbox{
+    padding: 5px 0px 20px;
+    margin-top: 10px;
+    flex-basis: 23%;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 500px;
   }
 
   .registervendor{
@@ -397,7 +695,7 @@ transform: scale(1.1);
   }
 
   .signin:hover{
-    background: #ffe400;
+    background: #ffe400; 
     color: #404257;
   }
 
@@ -438,7 +736,6 @@ transform: scale(1.1);
     font-family: 'Rubik', sans-serif;
     margin-left: 45px;
   }
-
 
   .mainsearch{
     margin-top: 30px;
@@ -527,6 +824,49 @@ transform: scale(1.1);
       display: none;
       line-height: 23px;
   }
+
+  .infoMsgBox{
+    background-color: #dfecf3;
+    border-color: #1e93c2;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: #2e718b;
+    padding: 15px;
+    border-radius:5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    display: none;
+    line-height: 23px;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.hintBox{
+  background-color: #e9f5eb;
+  border-color: #b2e0d2;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 13px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: #1ea361;
+  padding: 10px;
+  border-radius:5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: none;
+  line-height: 23px;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;  
+}
 
   .successMsgBox{
     background-color: #0e9647;

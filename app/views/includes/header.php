@@ -32,7 +32,7 @@
             <button type="submit" form="form1" value="Submit">Search</button>
         </form>
         </div>
-    <div style="display:flex; align-items:center;">
+    <div style=" display:flex; align-items:center;">
 
 <?php if(isset($_SESSION['user_id'])) : ?>
     <a class="dashboard" href="<?php echo URLROOT; ?>/account/dashboard"><i style="margin-right:5px;" class="fa fa-user"></i> Hi, <?php echo $_SESSION['firstname']; ?> ...</a>
@@ -67,7 +67,7 @@
         <div style="padding-bottom:10px; display:flex;">
 
         <?php if(isset($_SESSION['user_id'])) : ?>
-            <a class="dashboard" href="<?php echo URLROOT; ?>/account/dashboard"><i style="margin-right:5px;" class="fa fa-user"></i> Hi, <?php echo $_SESSION['firstname']; ?> ...</a>
+            <a class="dashboard" href="<?php echo URLROOT; ?>/account/dashboard"><i style="margin-right:5px;" class="fa fa-user"></i> Hi, <?php echo ucfirst($_SESSION['firstname']); ?></a>
             <a class="signup" href="<?php echo URLROOT; ?>/account/logout">Log out <i style="margin-left:5px;" class="fas fa-sign-out-alt"></i></a>
         <?php else : ?>
             <a class="signin" href="<?php echo URLROOT; ?>/account/login"><i style="margin-right:5px;" class="fa fa-user"></i> Sign In</a>
