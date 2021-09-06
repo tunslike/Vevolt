@@ -11,5 +11,16 @@
         }else{
             return 'false';
         }
-        
+    }
+
+    function addLeadingZero($value){
+        return str_pad($value, '5', '0', STR_PAD_LEFT);
+    }
+
+    function setCartCookie ($cookieName, $cookieValue) {        
+        setcookie($cookieName, $cookieValue, time() + 3600, '/' ); // set cookie for 1 hour
+    }
+
+    function retrieveCartCookie () {
+        return $_COOKIE["cartItem"];
     }

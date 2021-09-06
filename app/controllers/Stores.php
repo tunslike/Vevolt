@@ -157,16 +157,95 @@ class Stores extends Controller {
 
         if(isLoggedIn()){
             
+            $customerid = $_SESSION['user_id'];
+             
+            $userDetails = $this->userModel->fetchUserDetails($_SESSION['user_id']);
         }
-
 
         $data = [
             'title' => 'Checkout - '.SITENAME,
-            'cart' => $cart
+            'cart' => $cart,
+            'user' => $userDetails
         ];
 
-
         $this->view('stores/checkout', $data);
+    }
+
+    public function createOrder() {
+
+        if(!isset($_SESSION['cart'])) {
+
+            header("Location: " . URLROOT . "/index");
+        }else {
+            //get identity
+            $identity = $_SESSION['cart'];
+
+            //load cart items
+            $cart = $this->userModel->getCartItems($identity);
+        }
+
+        var_dump($cart);
+        exit();
+
+        if(isLoggedIn()){
+            $customerid = $_SESSION['user_id'];
+        }else {
+            header("Location: " . URLROOT . "/index");
+        }
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            
+            $deliverOptions = trim($_POST['options']);
+
+            switch ($deliverOptions) {
+                case '1':
+                    $data = [
+                        'name' => trim($_POST['deliveryfname']),
+                        'address' => trim($_POST['deliveryAddr']),
+                        'email' => trim($_POST['deliveryEmail']),
+                        'state' => trim($_POST['deliveryState']),
+                        'mobile' => trim($_POST['deliveryMobile']),
+                        'location' => '',
+                        'deliveryType' => 'DELIVERY',
+                        'customerid' => $customerid,
+                        'productid' => $productid
+                    ];
+                break;
+                case '2':
+                    $data = [
+                        'name' => trim($_POST['pickupFname']),
+                        'address' => '',
+                        'email' => trim($_POST['pickupEmail']),
+                        'state' => trim($_POST['pickupState']),
+                        'mobile' => trim($_POST['pickupMobile']),
+                        'location' => trim($_POST['pickupLocation']),
+                        'deliveryType' => 'PICKUP',
+                        'customerid' => $customerid,
+                        'productid' => $productid
+                    ];
+                break;
+                default:
+                    $data = [];
+                break;
+            }
+
+            //get cart details
+            $order = $this->userModel->createOrder($data);
+
+            if($order) {
+
+                header("Location: " . URLROOT . "/stores/confirmation?stat=true");
+                exit();
+
+            }else{
+
+                header("Location: " . URLROOT . "/stores/cart?stat=false&err=logged");
+                exit();
+            }
+
+        }else {
+            header("Location: " . URLROOT . "/index");
+        }
 
     }
 

@@ -1,14 +1,18 @@
 <?php
 class Pages extends Controller {
     public function __construct() {
-        //$this->userModel = $this->model('User');
+        $this->userModel = $this->model('Store');
     }
 
     public function index() {
-        $data = [
-            'title' => 'Home page'
-        ];
 
+        $products = $this->userModel->loadAllProducts();
+
+        $data = [
+            'title' => 'Home page',
+            'products' => $products
+        ]; 
+        
         $this->view('index', $data);
     }
 

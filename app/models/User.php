@@ -19,6 +19,7 @@ class User {
         } else {
             return false;
         }
+        
     }
 
     public function login($username, $password) {

@@ -12,6 +12,19 @@ function validateLoginForm(){
     }
 }
 
+function switchDeliveryOption() {
+    if($('#deladdr').is(":checked")){
+
+        $('#pickupWindow').hide()
+        $('#deliveryWindow').show()
+
+    }else if($('#delloc').is(":checked")){
+
+        $('#deliveryWindow').hide()
+        $('#pickupWindow').show()
+    }
+}
+
 function validateCreateStrore() {
 
     var sname = $('#sname').val() 
@@ -24,6 +37,18 @@ function validateCreateStrore() {
         $('#ermsg').html('All fields are complusory!')
         $('.errorMsgBox').show()
         return false;
+    }
+}
+
+function ValidateQuantityField(count) {
+    if(count.trim() == '') {
+
+        $('.qtyval').val('1');
+
+    }else if(count.trim() == '0') {
+
+        $('.qtyval').val('1');
+
     }
 }
 

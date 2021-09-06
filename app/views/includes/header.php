@@ -15,6 +15,15 @@
 <body>
 <div class="wrapper">
 
+<?php if(isset($_SESSION['cart'])) : ?>
+<div class="stickyCartCount">
+    <a href="#">
+        <div><i class="fas fa-shopping-cart"></i></div>
+        <div style="margin-top:10px;">1 Item</div>
+    </a>
+</div>
+<?php endif; ?>
+
 <div class="menuAreaFixed">
     <div class="logoareatop">
     <a href="<?php echo URLROOT; ?>/index" title="Back to Home"><img src="<?php echo URLROOT; ?>/public/images/logo.jpg?v=<?php echo rand(10000000000,99999999999); ?>" alt="Logo" width="100px" /></a>

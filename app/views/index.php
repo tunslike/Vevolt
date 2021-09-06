@@ -60,7 +60,7 @@
 </div>
 
 <div class="productWindow">
-    <div class="productheader">
+    <div class="productheaderHome">
         <div class="productheadertitle">
         <i style="margin-right:10px;" class="fas fa-shopping-bag"></i> Available Products
         </div>
@@ -117,102 +117,27 @@
         <!-- Right Side Display starts here-->
         <div class="productrightbox">
         <div class="productrow">
-                <div class="productcolumn">
-                    <img src="<?php echo URLROOT; ?>/public/images/products/prod1.jpg?v=<?php echo rand(10000000000,99999999999); ?>" />
+
+        <?php foreach($data['products'] as $product): ?>
+
+            <div class="productcolumn">
+                <a href="<?php echo URLROOT; ?>/stores/product?sku=1&pid=<?php echo $product->PRODUCT_ID; ?>" style="text-decoration:none;">
+                <img src="<?php echo URLROOT; ?>/public/images/products/<?php echo $product->FILE_NAME; ?>?v=<?php echo rand(10000000000,99999999999); ?>" />
                     <div class="productname">
-                    Engine Oil Filter
+                    <?php echo $product->NAME; ?>
                     </div>
-                    <a href="#" style="text-decoration:none;">
                     <div class="productDetails">
                     <div class="prodprice">
-                    ₦ 4,500.00
+                    ₦ <?php echo number_format($product->AMOUNT, 2); ?>
                     </div>
                     <div class="prodCount">
-                        15 Sold
+                    <?php echo $product->TOTAL_SOLD; ?> Sold
                     </div>
                 </div>
                 </a>
                 </div>
-                <div class="productcolumn">
-                    <img src="<?php echo URLROOT; ?>/public/images/products/prod2.jpg?v=<?php echo rand(10000000000,99999999999); ?>" />
-                    <div class="productname">
-                    Engine Oil Filter
-                    </div>
-                    <a href="#" style="text-decoration:none;">
-                    <div class="productDetails">
-                    <div class="prodprice">
-                    ₦ 4,500.00
-                    </div>
-                    <div class="prodCount">
-                        15 Sold
-                    </div>
-                </div>
-                </a>
-                </div>
-                <div class="productcolumn">
-                    <img src="<?php echo URLROOT; ?>/public/images/products/prod3.jpg?v=<?php echo rand(10000000000,99999999999); ?>" />
-                    <div class="productname">
-                    Engine Oil Filter
-                    </div>
-                    <a href="#" style="text-decoration:none;">
-                    <div class="productDetails">
-                    <div class="prodprice">
-                    ₦ 4,500.00
-                    </div>
-                    <div class="prodCount">
-                        15 Sold
-                    </div>
-                </div>
-                </a>
-                </div>
-                <div class="productcolumn">
-                    <img src="<?php echo URLROOT; ?>/public/images/products/prod4.jpg?v=<?php echo rand(10000000000,99999999999); ?>" />
-                    <div class="productname">
-                    Engine Oil Filter
-                    </div>
-                    <a href="#" style="text-decoration:none;">
-                    <div class="productDetails">
-                    <div class="prodprice">
-                    ₦ 4,500.00
-                    </div>
-                    <div class="prodCount">
-                        15 Sold
-                    </div>
-                </div>
-                </a>
-                </div>
-                <div class="productcolumn">
-                    <img src="<?php echo URLROOT; ?>/public/images/products/prod5.jpg?v=<?php echo rand(10000000000,99999999999); ?>" />
-                    <div class="productname">
-                    Engine Oil Filter
-                    </div>
-                    <a href="#" style="text-decoration:none;">
-                    <div class="productDetails">
-                    <div class="prodprice">
-                    ₦ 4,500.00
-                    </div>
-                    <div class="prodCount">
-                        15 Sold
-                    </div>
-                </div>
-                </a>
-                </div>
-                <div class="productcolumn">
-                    <img src="<?php echo URLROOT; ?>/public/images/products/prod6.jpg?v=<?php echo rand(10000000000,99999999999); ?>" />
-                    <div class="productname">
-                    Engine Oil Filter
-                    </div>
-                    <a href="#" style="text-decoration:none;">
-                    <div class="productDetails">
-                    <div class="prodprice">
-                    ₦ 4,500.00
-                    </div>
-                    <div class="prodCount">
-                        15 Sold
-                    </div>
-                </div>
-                </a>
-                </div>
+            
+        <?php endforeach; ?>
             </div>
         </div>
     </div>
